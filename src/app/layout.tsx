@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}) {
+}: any) {
   return (
     <html lang="en">
       <body className={`${kodchasan.className} bg-dark w-full flex flex-wrap`}>
