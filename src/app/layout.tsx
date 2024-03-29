@@ -7,9 +7,9 @@ import CoreMenu from "@/components/Menu/CoreMenu";
 import SidebarCore from "@/components/Sidebar/SidebarCore";
 import ChatCore from "@/components/Chat/ChatCore";
 
-export const kodchasan = Kodchasan({
+const kodchasan = Kodchasan({
   subsets: ["latin"],
-  weight: ["200", "300", "500", "700"]
+  weight: ["200", "300", "500", "700"],
 })
 
 export const metadata: Metadata = {
@@ -19,9 +19,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={`${kodchasan.className} bg-dark w-full flex flex-wrap`}>

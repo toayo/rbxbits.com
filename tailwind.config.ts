@@ -18,6 +18,9 @@ const config: Config = {
         },
         light: {
           DEFAULT: "#333747"
+        },
+        relaxed: {
+          DEFAULT: "#8289A3"
         }
       },
     },
