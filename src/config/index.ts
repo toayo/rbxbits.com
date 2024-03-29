@@ -10,7 +10,7 @@ const App = {
 
     get Info() {
         return {
-            SidebarSize: 15,
+            SidebarSize: 12,
             ChatSize: 15,
         }
     },

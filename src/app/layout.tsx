@@ -24,13 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${kodchasan.className} h-screen bg-dark w-full flex flex-wrap`}>
-        <section className="w-full h-auto">
-          <CoreMenu></CoreMenu>
-        </section>
+      <body className={`${kodchasan.className} bg-dark w-full flex flex-wrap`}>
+        <section className="w-full h-screen flex flex-wrap">
+          <section className="w-full h-auto">
+            <CoreMenu></CoreMenu>
+          </section>
 
-        <section className="w-full h-full flex flex-wrap">
           <section
+            className="h-full"
             style={{
               width: `${Config.App.Info.SidebarSize}%`
             }}
@@ -39,6 +40,7 @@ export default function RootLayout({
           </section>
 
           <section
+            className="h-full"
             style={{
               width: `${100 - (Config.App.Info.SidebarSize + Config.App.Info.ChatSize)}%`
             }}
@@ -47,6 +49,7 @@ export default function RootLayout({
           </section>
 
           <section
+            className="h-full"
             style={{
               width: `${Config.App.Info.ChatSize}%`
             }}
