@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Kodchasan } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css"
+import Config from "@/config";
+import CoreMenu from "@/components/Menu/CoreMenu";
+import SidebarCore from "@/components/Sidebar/SidebarCore";
+import ChatCore from "@/components/Chat/ChatCore";
+
+export const kodchasan = Kodchasan({
+  subsets: ["latin"],
+  weight: ["200", "300", "500", "700"]
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +24,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${kodchasan.className} h-screen bg-dark w-full flex flex-wrap`}>
+        <section className="w-full h-auto">
+          <CoreMenu></CoreMenu>
+        </section>
+
+        <section className="w-full h-full flex flex-wrap">
+          <section
+            style={{
+              width: `${Config.App.Info.SidebarSize}%`
+            }}
+          >
+            <SidebarCore></SidebarCore>
+          </section>
+
+          <section
+            style={{
+              width: `${100 - (Config.App.Info.SidebarSize + Config.App.Info.ChatSize)}%`
+            }}
+          >
+            {children}
+          </section>
+
+          <section
+            style={{
+              width: `${Config.App.Info.ChatSize}%`
+            }}
+          >
+            <ChatCore></ChatCore>
+          </section>
+        </section>
+      </body>
     </html>
   );
 }
