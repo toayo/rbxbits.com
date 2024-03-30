@@ -2,7 +2,6 @@ import Config from "@/config"
 import JoinNowButton from "../Buttons/JoinNow"
 
 export default function CoreMenu() {
-
     return <header className="border-b border-light text-white flex justify-between items-center h-full px-6">
         <a className="text-xl font-bold" href={`/`}>
             <span className="capitalize">
