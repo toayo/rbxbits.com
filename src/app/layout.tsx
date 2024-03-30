@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Kodchasan, Roboto_Slab } from "next/font/google";
+import { Kodchasan, Poppins, Roboto_Slab } from "next/font/google";
 
 import "./globals.css"
 import Config from "@/config";
@@ -8,6 +8,11 @@ import SidebarCore from "@/components/Sidebar/SidebarCore";
 import ChatCore from "@/components/Chat/ChatCore";
 
 const kodchasan = Kodchasan({
+  subsets: ["latin"],
+  weight: ["200", "300", "500", "700"],
+})
+
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["200", "300", "500", "700"],
 })
@@ -26,7 +31,7 @@ export default function RootLayout({
 }: any) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} overflow-y-hidden bg-dark w-full flex flex-wrap`}>
+      <body className={`${poppins.className} overflow-y-hidden bg-dark w-full flex flex-wrap`}>
         <section className="w-full flex flex-wrap" style={{
           height: "100vh",
         }}>
