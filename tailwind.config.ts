@@ -14,14 +14,29 @@ const config: Config = {
           500: "#1A1D28",
         },
         first: {
-          DEFAULT: "#F54D89"
+          DEFAULT: '#F54D89',
+          50: '#FAA4C3',
+          100: '#F99ABC',
+          200: '#F887AF',
+          300: '#F774A3',
+          400: '#F66096',
+          500: '#F54D89',
+          600: '#F21866',
+          700: '#C70B4E',
+          800: '#920839',
+          900: '#5C0524',
+          950: '#42041A'
         },
         light: {
           DEFAULT: "#333747"
         },
         relaxed: {
           DEFAULT: "#8289A3"
+        },
+        supreme: {
+          DEFAULT: "#13151E"
         }
+
       },
     },
   },

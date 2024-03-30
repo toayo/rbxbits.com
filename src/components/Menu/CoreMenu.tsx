@@ -3,7 +3,7 @@ import JoinNowButton from "../Buttons/JoinNow"
 
 export default function CoreMenu() {
 
-    return <header className="border-b border-light text-white flex justify-between items-center py-4 px-6">
+    return <header className="border-b border-light text-white flex justify-between items-center h-full px-6">
         <a className="text-xl font-bold" href={`/`}>
             <span className="capitalize">
                 {Config.App.Domain.Name}

@@ -2,32 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS for custom scrollbar */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
+    height: 32px;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #F54D89;
-    border-radius: 6px;
-    border: 3px solid transparent;
-    background-clip: padding-box;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #F54D89;
-    /* Change color on hover if desired */
-}
-
-::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-::-webkit-scrollbar-track:hover {
-    background-color: transparent;
-}
-
-/* Optional: Add a glowing effect */
-::-webkit-scrollbar-thumb {
-    box-shadow: 0 0 10px rgba(245, 77, 137, 0.8);
 }

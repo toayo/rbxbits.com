@@ -22,37 +22,46 @@ export default function RootLayout({
 }: any) {
   return (
     <html lang="en">
-      <body className={`${kodchasan.className} bg-dark w-full flex flex-wrap`}>
-        <section className="w-full h-screen flex flex-wrap">
-          <section className="w-full h-auto">
+      <body className={`${kodchasan.className} overflow-y-hidden bg-dark w-full flex flex-wrap`}>
+        <section className="w-full flex flex-wrap" style={{
+          height: "100vh",
+        }}>
+          <section className="w-full"
+            style={{
+              height: "10%"
+            }}>
             <CoreMenu></CoreMenu>
           </section>
 
-          <section
-            className="h-full"
-            style={{
-              width: `${Config.App.Info.SidebarSize}%`
-            }}
-          >
-            <SidebarCore></SidebarCore>
-          </section>
+          <section className="w-full flex flex" style={{
+            height: "90%"
+          }}>
+            <section
+              className=""
+              style={{
+                width: `${Config.App.Info.SidebarSize}%`
+              }}
+            >
+              <SidebarCore></SidebarCore>
+            </section>
 
-          <section
-            className="h-full"
-            style={{
-              width: `${100 - (Config.App.Info.SidebarSize + Config.App.Info.ChatSize)}%`
-            }}
-          >
-            {children}
-          </section>
+            <section
+              className=""
+              style={{
+                width: `${100 - (Config.App.Info.SidebarSize + Config.App.Info.ChatSize)}%`
+              }}
+            >
+              {children}
+            </section>
 
-          <section
-            className="h-full"
-            style={{
-              width: `${Config.App.Info.ChatSize}%`
-            }}
-          >
-            <ChatCore></ChatCore>
+            <section
+              className=""
+              style={{
+                width: `${Config.App.Info.ChatSize}%`
+              }}
+            >
+              <ChatCore ></ChatCore>
+            </section>
           </section>
         </section>
       </body>

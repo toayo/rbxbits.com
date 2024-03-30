@@ -25,7 +25,7 @@ const roboto = Roboto_Slab({
 export default function MessageBox(props: Props) {
     return <div className="rounded-br-xl rounded-tr-xl rounded-tl-xl bg-light p-4">
         <div className="flex flex-wrap space-x-3">
-            <div className="w-12 h-12 bg-dark rounded-md"></div>
+            <div className="w-10 h-10 bg-dark rounded-full"></div>
             <div>
                 <h3 className="text-white">
                     {props.username}
@@ -36,7 +36,7 @@ export default function MessageBox(props: Props) {
             </div>
         </div>
 
-        <div className={`text-gray-300 break-word mt-2 text-[12px] ${roboto.className}`}>
+        <div className={`text-gray-300 break-word mt-2 text-[13px] ${roboto.className}`}>
             {props.content}
         </div>
     </div >
