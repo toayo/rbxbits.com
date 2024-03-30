@@ -1,3 +1,10 @@
+import { Kodchasan } from "next/font/google"
+
+const kodchasan = Kodchasan({
+    subsets: ["latin"],
+    weight: ["200", "300", "500", "700"],
+})
+
 const Games = {
     Towers: {
         Location: "/towers",
@@ -39,7 +46,7 @@ const Mores = {
 }
 
 export default function SidebarCore() {
-    return <div className="bg-red flex flex-wrap h-full w-full border-r border-light">
+    return <div className={`bg-red flex flex-wrap h-full w-full border-r border-light ${kodchasan.className}`}>
         <section className="px-4 w-full">
             <section className="py-8 border-b border-light">
                 {
@@ -68,6 +75,7 @@ export default function SidebarCore() {
                             <span className="">
                                 {game.Icon}
                             </span>
+
                             <span className="">
                                 {m}
                             </span>

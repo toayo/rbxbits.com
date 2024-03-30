@@ -7,11 +7,6 @@ import CoreMenu from "@/components/Menu/CoreMenu";
 import SidebarCore from "@/components/Sidebar/SidebarCore";
 import ChatCore from "@/components/Chat/ChatCore";
 
-const kodchasan = Kodchasan({
-  subsets: ["latin"],
-  weight: ["200", "300", "500", "700"],
-})
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["200", "300", "500", "700"],
