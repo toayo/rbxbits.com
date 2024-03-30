@@ -30,13 +30,13 @@ export default function MessageBox(props: Props) {
                 <h3 className="text-white">
                     {props.username}
                 </h3>
-                <p className={`${RankColor[props.rank as keyof typeof RankColor]} text-xs font-semibold`}>
+                <p className={`${RankColor[props.rank as keyof typeof RankColor]} text-[9px] font-semibold`}>
                     {UserRank[props.rank]}
                 </p>
             </div>
         </div>
 
-        <div className={`text-gray-300 break-word mt-2 text-sm ${roboto.className}`}>
+        <div className={`text-gray-300 break-word mt-2 text-[12px] ${roboto.className}`}>
             {props.content}
         </div>
     </div >
