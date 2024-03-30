@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import MessageBox from "./MessageBox";
 
 export default function ChatCore() {
