@@ -35,8 +35,22 @@ const config: Config = {
         },
         supreme: {
           DEFAULT: "#13151E"
+        },
+        boxed: {
+          DEFAULT: "#292C38"
+        },
+        inner: {
+          DEFAULT: `#373A47`
+        },
+        bright: {
+          DEFAULT: "#A0B4BF"
+        },
+        cups: {
+          magenta: "#cb62de",
+          purple: "#9439e3",
+          yellow: "#e39939",
+          pink: "#eb498c",
         }
-
       },
     },
   },

@@ -2,9 +2,9 @@ const Production = false;
 const Api = Production ? "PRODUCTION_API_URL" : "DEBUG_API_URL";
 
 const App = {
-    Name: "Buxxer",
+    Name: "Games",
     Domain: {
-        Name: "buxxer",
+        Name: "games",
         TLD: ".gg"
     },
 

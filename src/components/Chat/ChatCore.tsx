@@ -1,39 +1,15 @@
 import { useEffect, useMemo, useRef } from "react";
-import MessageBox from "./MessageBox";
+import MessageBox, { UserRank } from "./MessageBox";
+import db from "@/db";
+
+export interface MessageInterface {
+    username: string,
+    rank: UserRank,
+    content: string
+}
 
 export default function ChatCore() {
-    const messages = [
-        {
-            rank: 0,
-            username: 'BOBBOB',
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-        },
-        {
-            rank: 0,
-            username: 'BOBBOB',
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-        },
-        {
-            rank: 2,
-            username: 'JUB0T',
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        {
-            rank: 0,
-            username: 'BOBBOB',
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-        },
-        {
-            rank: 1,
-            username: 'ROBLOX',
-            content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-        },
-        {
-            rank: 0,
-            username: 'BOBBOB',
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-        },
-    ];
+    const messages = db.test.getMessages();
 
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
@@ -47,13 +23,13 @@ export default function ChatCore() {
 
     return (
         <div className="bg-red h-full w-full overflow-y-auto scroll-smooth space-y-3 border-l border-light p-3" ref={chatContainerRef}>
-            {messages.map(msg => (
+            {messages.map((msg: MessageInterface) => (
                 <MessageBox key={(new Date().getTime() + Math.random()).toString()} {...msg}></MessageBox>
             ))}
 
             <section>
                 <input type="text" className="focus:outline-none text-white shadow-sm bg-supreme rounded-lg text-light text-xs w-full py-4 items-center px-3" placeholder="Message..." />
-                <h4 className="float-right text-relaxed text-sm py-1">
+                <h4 className="float-right text-relaxed text-xs py-1">
                     <span>~ </span>
                     <span>120</span>
                     <span>/</span>

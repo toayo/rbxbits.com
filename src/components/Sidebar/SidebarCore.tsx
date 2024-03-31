@@ -1,8 +1,16 @@
-import { Kodchasan } from "next/font/google"
+import { Josefin_Slab, Kodchasan, Montserrat } from "next/font/google"
 
-const kodchasan = Kodchasan({
+const montserrat = Montserrat({
     subsets: ["latin"],
-    weight: ["200", "300", "500", "700"],
+    weight: [
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700"
+    ]
 })
 
 const Games = {
@@ -46,18 +54,18 @@ const Mores = {
 }
 
 export default function SidebarCore() {
-    return <div className={`bg-red flex flex-wrap h-full w-full border-r border-light ${kodchasan.className}`}>
+    return <div className={`bg-red flex flex-wrap h-full w-full border-r border-light ${montserrat.className}`}>
         <section className="px-4 w-full">
             <section className="py-8 border-b border-light">
                 {
                     Object.keys(Games).map(g => {
                         const game = Games[g as keyof typeof Games]
 
-                        return <a href={game.Location} key={g} className="tracking-wider text-lg font-semibold transition-all duration-300 text-relaxed uppercase hover:text-first hover:cursor-pointer px-2 py-3 flex flex-wrap items-center space-x-2 text-sm rounded-md w-full">
+                        return <a href={game.Location} key={g} className="tracking-wider hover:scale-95 text-[15px] font-bold transition-all duration-300 text-relaxed uppercase hover:text-first hover:cursor-pointer px-2 py-3 flex flex-wrap items-center space-x-2 text-sm rounded-md w-full">
                             <span className="">
                                 {game.Icon}
                             </span>
-                            <span className="">
+                            <span className="xl:block hidden">
                                 {g}
                             </span>
                         </a>
@@ -71,12 +79,12 @@ export default function SidebarCore() {
                     Object.keys(Mores).map(m => {
                         const game = Mores[m as keyof typeof Mores]
 
-                        return <div key={m} className="text-lg font-regular transition-all duration-300 text-relaxed uppercase hover:text-first hover:cursor-pointer px-2 py-3 flex flex-wrap items-center space-x-2 text-sm rounded-md w-full">
+                        return <div key={m} className="text-lg hover:scale-95 font-semibold transition-all duration-300 text-relaxed uppercase hover:text-first hover:cursor-pointer px-2 py-3 flex flex-wrap items-center space-x-2 text-sm rounded-md w-full">
                             <span className="">
                                 {game.Icon}
                             </span>
 
-                            <span className="">
+                            <span className="xl:block hidden">
                                 {m}
                             </span>
                         </div>
@@ -85,7 +93,7 @@ export default function SidebarCore() {
             </section>
 
             <section className="py-8 w-full">
-                <a href="/earn" className="flex transition-all duration-300 hover:shadow-lg shadow-none hover:shadow-first-500/50 flex-wrap items-center text-center justify-center bg-first rounded-md w-full text-white py-3 focus:outline-none px-6 uppercase">
+                <a href="/earn" className="flex transition-all duration-300 hover:shadow-md hover:scale-95 hover:bg-supreme shadow-none flex-wrap items-center text-center justify-center bg-first rounded-md w-full text-white py-3 focus:outline-none px-6 uppercase">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M7 15h2c0 1.08 1.37 2 3 2s3-.92 3-2c0-1.1-1.04-1.5-3.24-2.03C9.64 12.44 7 11.78 7 9c0-1.79 1.47-3.31 3.5-3.82V3h3v2.18C15.53 5.69 17 7.21 17 9h-2c0-1.08-1.37-2-3-2s-3 .92-3 2c0 1.1 1.04 1.5 3.24 2.03C14.36 11.56 17 12.22 17 15c0 1.79-1.47 3.31-3.5 3.82V21h-3v-2.18C8.47 18.31 7 16.79 7 15" /></svg>
                     </span>

@@ -5,6 +5,15 @@ const Secrets = {
 
         }
     },
+
+    // Do not add extra fields
+    Mysql: {
+        username: "root",
+        password: "",
+        database: "casinodb",
+        host: "127.0.0.1",
+        port: 3306,
+    }
 }
 
 export default Secrets
