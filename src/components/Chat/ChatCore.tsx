@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from "react";
 import MessageBox, { UserRank } from "./MessageBox";
-import db from "@/db";
 import { GetServerSideProps } from "next";
+import db from "@/db";
 
 export interface MessageInterface {
     username: string,

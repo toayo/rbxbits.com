@@ -1,8 +1,6 @@
-'use server'
-
 import { Sequelize } from "sequelize";
-import test from "./test";
 import Secrets from "../config/secrets"
+import test from "./test";
 
 export const sequelize = new Sequelize({
     dialect: "mysql",
