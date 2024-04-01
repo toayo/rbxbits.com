@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from "react";
 import MessageBox, { UserRank } from "./MessageBox";
 import db from "@/db";
+import { GetServerSideProps } from "next";
 
 export interface MessageInterface {
     username: string,
@@ -8,8 +9,19 @@ export interface MessageInterface {
     content: string
 }
 
-export default function ChatCore() {
+export const getServerSideProps: GetServerSideProps = async () => {
     const messages = db.test.getMessages();
+
+    return {
+        props: {
+            messages,
+        },
+    };
+};
+
+export default function ChatCore({ messages }: {
+    ["messages"]: MessageInterface[]
+}) {
 
     const chatContainerRef = useRef<HTMLDivElement>(null);
 

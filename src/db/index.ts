@@ -1,3 +1,5 @@
+'use server'
+
 import { Sequelize } from "sequelize";
 import test from "./test";
 import Secrets from "../config/secrets"
