@@ -1,4 +1,4 @@
-class DatabaseTest {
+export class DatabaseTest {
     getMessages() {
         return [
             {

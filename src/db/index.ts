@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import Secrets from "../config/secrets"
-import test from "./test";
+import test, { DatabaseTest } from "./test";
 
 export const sequelize = new Sequelize({
     dialect: "mysql",
@@ -8,12 +8,7 @@ export const sequelize = new Sequelize({
 });
 
 class Database {
-    test: any;
-
-    constructor() {
-        this.test = test
-    }
-
+    test: DatabaseTest = test;
 }
 
 const DB = new Database();

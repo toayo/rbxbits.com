@@ -1,7 +1,4 @@
-import { useEffect, useMemo, useRef } from "react";
 import MessageBox, { UserRank } from "./MessageBox";
-import { GetServerSideProps } from "next";
-import db from "@/db";
 
 export interface MessageInterface {
     username: string,
@@ -9,32 +6,17 @@ export interface MessageInterface {
     content: string
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-    const messages = db.test.getMessages();
-
+export async function getServerSideProps() {
     return {
         props: {
-            messages,
-        },
-    };
-};
+            messages: []
+        }
+    }
+}
 
-export default function ChatCore({ messages }: {
-    ["messages"]: MessageInterface[]
-}) {
-
-    const chatContainerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        // Scroll to the bottom of the chat container when messages change
-        chatContainerRef.current?.scrollTo({
-            top: chatContainerRef.current.scrollHeight,
-            behavior: "smooth",
-        });
-    }, [messages]);
-
+export default async function ChatCore({ messages }: any) {
     return (
-        <div className="bg-red h-full w-full overflow-y-auto scroll-smooth space-y-3 border-l border-light p-3" ref={chatContainerRef}>
+        <div className="bg-red h-full w-full overflow-y-auto scroll-smooth space-y-3 border-l border-light p-3">
             {messages.map((msg: MessageInterface) => (
                 <MessageBox key={(new Date().getTime() + Math.random()).toString()} {...msg}></MessageBox>
             ))}

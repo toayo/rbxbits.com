@@ -1,16 +1,9 @@
-import type { Metadata } from "next";
-import { Kodchasan, Poppins, Roboto_Slab } from "next/font/google";
-
 import "./globals.css"
 import Config from "@/config";
 import CoreMenu from "@/components/Menu/CoreMenu";
+import { Poppins } from "next/font/google";
 import SidebarCore from "@/components/Sidebar/SidebarCore";
 import ChatCore from "@/components/Chat/ChatCore";
-
-const kodchasan = Kodchasan({
-    subsets: ["latin"],
-    weight: ["200", "300", "500", "700"],
-})
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -59,10 +52,10 @@ export default function RootLayout({
                             width: `${Config.App.Info.ChatSize}%`
                         }}
                     >
-                        <ChatCore ></ChatCore>
+                        <ChatCore></ChatCore>
                     </section>
                 </section>
             </section>
-        </div>
+        </div >
     );
 }
