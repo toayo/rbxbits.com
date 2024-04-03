@@ -1,7 +1,9 @@
 import Config from "./config/index";
+import CupsGame from "./pages/cups/index"
 import CoreMenu from "./components/Menu/CoreMenu";
 import ChatCore from "./components/Chat/ChatCore";
 import SidebarCore from "./components/Sidebar/SidebarCore";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import "./style/tw.css"
 import "./style/font.css"
@@ -71,9 +73,12 @@ function App() {
               width: `${100 - (Config.App.Info.SidebarSize + Config.App.Info.ChatSize)}%`
             }}
           >
-            {/* 
-              Children Go Here
-            */}
+            <Router>
+              <Routes>
+                <Route path="/cups" element={<CupsGame />} />
+                {/* Other routes go here */}
+              </Routes>
+            </Router>
           </section>
 
           <section
