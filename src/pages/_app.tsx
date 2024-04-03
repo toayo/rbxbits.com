@@ -3,16 +3,25 @@ import Config from "@/config";
 import CoreMenu from "@/components/Menu/CoreMenu";
 import { Poppins } from "next/font/google";
 import SidebarCore from "@/components/Sidebar/SidebarCore";
-import ChatCore from "@/components/Chat/ChatCore";
+import ChatCore, { Messages } from "@/components/Chat/ChatCore";
+import { GetServerSideProps } from "next";
+import DB from "@/db";
 
 const poppins = Poppins({
     subsets: ["latin"],
     weight: ["200", "300", "500", "700"],
 })
 
+const msgs = DB.test.getMessages()
+
 export default function RootLayout({
-    Component, pageProps,
-}: any) {
+    Component,
+    pageProps,
+    messages,
+}: {
+    [key: string]: any,
+    messages: Messages
+}) {
     return (
         <div className={`${poppins.className} overflow-y-hidden bg-dark w-full flex flex-wrap`}>
             <section className="w-full flex flex-wrap" style={{
@@ -52,7 +61,7 @@ export default function RootLayout({
                             width: `${Config.App.Info.ChatSize}%`
                         }}
                     >
-                        <ChatCore></ChatCore>
+                        <ChatCore messages={messages || []}></ChatCore>
                     </section>
                 </section>
             </section>

@@ -6,15 +6,11 @@ export interface MessageInterface {
     content: string
 }
 
-export async function getServerSideProps() {
-    return {
-        props: {
-            messages: []
-        }
-    }
-}
+export type Messages = MessageInterface[]
 
-export default async function ChatCore({ messages }: any) {
+export default function ChatCore({ messages }: {
+    messages: Messages
+}) {
     return (
         <div className="bg-red h-full w-full overflow-y-auto scroll-smooth space-y-3 border-l border-light p-3">
             {messages.map((msg: MessageInterface) => (
