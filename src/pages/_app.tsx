@@ -4,7 +4,6 @@ import CoreMenu from "@/components/Menu/CoreMenu";
 import { Poppins } from "next/font/google";
 import SidebarCore from "@/components/Sidebar/SidebarCore";
 import ChatCore, { Messages } from "@/components/Chat/ChatCore";
-import { GetServerSideProps } from "next";
 import DB from "@/db";
 
 const poppins = Poppins({
