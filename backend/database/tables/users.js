@@ -1,17 +1,20 @@
-import { DataTypes } from "sequelize";
-import { sequelize } from "..";
+const { DataTypes } = require("sequelize")
 
-export const User = sequelize.define('User', {
-    username: DataTypes.STRING,
-    password: DataTypes.STRING,
+module.exports = {
+    username: DataTypes.TEXT,
+    password: DataTypes.TEXT,
 
     avatarId: {
         default: null,
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
     },
 
     balance: {
         default: 0,
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
+    },
+
+    access_token: {
+        type: DataTypes.TEXT,
     }
-});
+}

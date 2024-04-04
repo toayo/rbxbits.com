@@ -1,4 +1,4 @@
-const { default: database } = require("../database");
+const { db } = require("../database");
 
 module.exports = async function AuthorizeMiddleware(req, res, next) {
     const token = req.headers.token;
@@ -11,11 +11,17 @@ module.exports = async function AuthorizeMiddleware(req, res, next) {
     }
 
     try {
-        const user = await database.getUserByToken(token);
-        console.log(user)
+        const user = await db.getUserByToken(token);
 
-        req.user = user;
-        next(); // Pass control to the next middleware in the stack
+        if (user != null) {
+            req.user = user;
+            next();
+        } else {
+            return res.json({
+                success: false,
+                message: "Unauthorized"
+            })
+        }
     } catch (error) {
         console.error("Error in authorization middleware:", error);
         return res.status(500).json({ success: false, message: "Internal Server Error" });
