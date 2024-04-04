@@ -11,7 +11,7 @@ const config = {
           500: "#1A1D28",
         },
         first: {
-          DEFAULT: '#E834EB',
+          DEFAULT: '#F173CE',
           50: '#F173CE',
           100: '#F06CD0',
           200: '#EF5ED5',
