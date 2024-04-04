@@ -68,7 +68,7 @@ function App() {
           </section>
 
           <section
-            className=""
+            className="bg-supreme h-full"
             style={{
               width: `${100 - (Config.App.Info.SidebarSize + Config.App.Info.ChatSize)}%`
             }}

@@ -33,7 +33,7 @@ class MessageBox extends React.Component {
                     </div>
                 </div>
 
-                <div className="text-gray-300 break-word mt-2 text-[13px]">
+                <div className="text-gray-300 break-words mt-2 text-[13px]">
                     {this.props.content}
                 </div>
             </div>

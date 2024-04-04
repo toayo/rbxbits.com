@@ -31,7 +31,7 @@ const Mores = {
 
     Affiliates: {
         Location: "/affiliates",
-        Icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="6" r="4" /><path stroke-linecap="round" d="M19.998 18c.002-.164.002-.331.002-.5c0-2.485-3.582-4.5-8-4.5s-8 2.015-8 4.5S4 22 12 22c2.231 0 3.84-.157 5-.437" /></g></svg>
+        Icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="6" r="4" /><path strokeLinecap="round" d="M19.998 18c.002-.164.002-.331.002-.5c0-2.485-3.582-4.5-8-4.5s-8 2.015-8 4.5S4 22 12 22c2.231 0 3.84-.157 5-.437" /></g></svg>
     },
 
     Rewards: {
@@ -83,7 +83,7 @@ export default class SidebarCore extends React.Component {
                 </section>
 
                 <section className="py-8 w-full">
-                    <a href="/earn" className="flex transition-all duration-300 hover:shadow-md hover:scale-95 hover:bg-supreme shadow-none flex-wrap items-center text-center justify-center bg-first rounded-md w-full text-white py-3 focus:outline-none px-6 uppercase">
+                    <a href="/earn" className="text-xs flex transition-all duration-300 hover:shadow-md hover:scale-95 hover:bg-supreme shadow-none flex-wrap items-center text-center justify-center bg-first rounded-md w-full text-white py-3 focus:outline-none px-6 uppercase">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M7 15h2c0 1.08 1.37 2 3 2s3-.92 3-2c0-1.1-1.04-1.5-3.24-2.03C9.64 12.44 7 11.78 7 9c0-1.79 1.47-3.31 3.5-3.82V3h3v2.18C15.53 5.69 17 7.21 17 9h-2c0-1.08-1.37-2-3-2s-3 .92-3 2c0 1.1 1.04 1.5 3.24 2.03C14.36 11.56 17 12.22 17 15c0 1.79-1.47 3.31-3.5 3.82V21h-3v-2.18C8.47 18.31 7 16.79 7 15" /></svg>
                         </span>

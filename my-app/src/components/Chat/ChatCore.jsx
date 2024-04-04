@@ -33,10 +33,40 @@ export default class ChatCore extends Component {
                 {/* This div ensures scrolling to the bottom */}
                 <div ref={this.chatBottomRef} />
                 <section>
-                    <input type="text" className="focus:outline-none text-white shadow-sm bg-supreme rounded-lg text-light text-xs w-full py-4 items-center px-3" placeholder="Message..." />
+                    <input
+                        onKeyUp={(e) => {
+                            const content = this.state.content
+
+                            if (e.key == "Enter") {
+                                if (content && content.length > 150) {
+                                    return
+                                }
+
+
+                                this.setState({
+                                    ...this.state,
+                                    messages: [
+                                        ...this.state.messages,
+                                        {
+                                            rank: 2,
+                                            username: 'JUB0T',
+                                            content: this.state.content
+                                        }
+                                    ]
+                                })
+
+                                e.target.value = null
+                            } else {
+                                this.setState({
+                                    ...this.state,
+                                    content: e.target.value
+                                })
+                            }
+                        }}
+                        type="text" className="focus:outline-none text-white shadow-sm bg-supreme rounded-lg text-light text-xs w-full py-4 items-center px-3" placeholder="Message..." />
                     <h4 className="float-right text-relaxed text-xs py-1">
                         <span>~ </span>
-                        <span>120</span>
+                        <span>{this.state.content?.length || 0}</span>
                         <span>/</span>
                         <span>150</span>
                     </h4>
