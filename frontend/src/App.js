@@ -3,11 +3,13 @@ import CupsGame from "./pages/cups/index"
 import CoreMenu from "./components/Menu/CoreMenu";
 import ChatCore from "./components/Chat/ChatCore";
 import SidebarCore from "./components/Sidebar/SidebarCore";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import "./style/tw.css"
 import "./style/font.css"
 import "./style/master.css"
+import TowersGame from "./pages/towers";
+import MinesGame from "./pages/mines";
 
 const messages = [
   {
@@ -45,52 +47,54 @@ const messages = [
 function App() {
   return (
     <div className={`overflow-y-hidden bg-dark w-full flex flex-wrap`}>
-      <section className="w-full flex flex-wrap" style={{
-        height: "100vh",
-      }}>
-        <section className="w-full"
-          style={{
-            height: "10%"
-          }}>
-          <CoreMenu></CoreMenu>
-        </section>
-
-        <section className="w-full flex flex" style={{
-          height: "90%"
+      <BrowserRouter>
+        <section className="w-full flex flex-wrap" style={{
+          height: "100vh",
         }}>
-          <section
-            className=""
+          <section className="w-full"
             style={{
-              width: `${Config.App.Info.SidebarSize}%`
-            }}
-          >
-            <SidebarCore></SidebarCore>
+              height: "10%"
+            }}>
+            <CoreMenu></CoreMenu>
           </section>
 
-          <section
-            className="bg-supreme h-full"
-            style={{
-              width: `${100 - (Config.App.Info.SidebarSize + Config.App.Info.ChatSize)}%`
-            }}
-          >
-            <Router>
+          <section className="w-full flex flex" style={{
+            height: "90%"
+          }}>
+            <section
+              className=""
+              style={{
+                width: `${Config.App.Info.SidebarSize}%`
+              }}
+            >
+              <SidebarCore></SidebarCore>
+            </section>
+
+            <section
+              className="bg-supreme h-full lg:w-[90%]"
+              style={{
+                width: `${100 - (Config.App.Info.SidebarSize + Config.App.Info.ChatSize)}%`
+              }}
+            >
               <Routes>
+                <Route path="/mines" element={<MinesGame />} />
                 <Route path="/cups" element={<CupsGame />} />
                 {/* Other routes go here */}
               </Routes>
-            </Router>
-          </section>
+            </section>
 
-          <section
-            className=""
-            style={{
-              width: `${Config.App.Info.ChatSize}%`
-            }}
-          >
-            <ChatCore messages={messages || []}></ChatCore>
+            <section
+              className=""
+              style={{
+                width: `${Config.App.Info.ChatSize}%`
+              }}
+            >
+              <ChatCore messages={messages || []}></ChatCore>
+            </section>
           </section>
         </section>
-      </section>
+
+      </BrowserRouter>
     </div >
   );
 }

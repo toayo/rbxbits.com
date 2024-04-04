@@ -26,7 +26,7 @@ export default class ChatCore extends Component {
 
     render() {
         return (
-            <div className="bg-red h-full w-full overflow-y-auto scroll-smooth space-y-3 border-l border-light p-3">
+            <div className="h-full w-full overflow-y-auto scroll-smooth space-y-3 border-l border-light p-3">
                 {this.state.messages.map((msg, index) => (
                     <MessageBox key={index} {...msg} />
                 ))}

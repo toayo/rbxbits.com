@@ -12,10 +12,10 @@ class CupsGame extends Component {
 
     render() {
         return (
-            <main className="flex text-bright flex-wrap justify-center overflow-scroll h-full p-10">
-                <div className="w-full grid grid-cols-12 gap-4">
-                    <div className='2xl:col-span-3 col-span-12'>
-                        <section className="p-5 bg-boxed rounded-[12px] font-semibold">
+            <main className="flex text-bright flex-wrap justify-center overflow-scroll h-full p-8">
+                <div className="w-full grid grid-cols-12 gap-6">
+                    <div className='2xl:col-span-4 col-span-12'>
+                        <section className="p-5 ring ring-first bg-boxed rounded-[12px] font-semibold">
                             <div className="w-full flex justify-between">
                                 {/* To Left */}
                                 <div className="flex space-x-2">
@@ -38,11 +38,11 @@ class CupsGame extends Component {
                             <div className="w-full space-y-2 mt-6">
                                 <div>
                                     <label htmlFor="" className="text-xs uppercase tracking-wide">Amount</label>
-                                    <input type="text" className="focus:outline-none bg-inner px-4 rounded-md py-3 w-full" />
+                                    <input type="text" className="focus:outline-none bg-inner font-medium px-4 text-xs rounded-md py-3 w-full" placeholder='100.00' />
                                 </div>
                                 <div>
                                     <label htmlFor="" className="text-xs uppercase tracking-wide">Reward</label>
-                                    <input type="text" className="focus:outline-none bg-inner px-4 rounded-md py-3 w-full" />
+                                    <input type="text" className="focus:outline-none bg-inner font-medium px-4 text-xs rounded-md py-3 w-full" placeholder='2x' />
                                 </div>
                             </div>
 
@@ -51,9 +51,9 @@ class CupsGame extends Component {
                             </div>
                         </section>
                     </div>
-                    <section className="2xl:col-span-9 col-span-12 space-y-4">
+                    <section className="2xl:col-span-8 col-span-12 space-y-4">
                         {[0, 0, 0, 0, 0].map(i => {
-                            return <div className="p-5 bg-boxed rounded-[12px] w-full space-y-2">
+                            return <div className="p-5 ring ring-light bg-boxed rounded-[12px] w-full space-y-2">
                                 <div className="py-6 px-8 bg-inner rounded-md grid grid-cols-2">
                                     <div className="flex flex-wrap items-center space-x-2">
                                         <div className="space-y-4">

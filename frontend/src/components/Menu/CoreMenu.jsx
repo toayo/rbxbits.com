@@ -3,8 +3,8 @@ import React from "react"
 
 export default class CoreMenu extends React.Component {
     render() {
-        return <header className="border-b border-light text-white flex justify-between items-center h-full px-6">
-            <a className="text-xl font-bold" href={`/`}>
+        return <header className="font-madimi border-b border-light text-white flex justify-between items-center h-full px-6">
+            <a className="text-xl" href={`/`}>
                 <span className="capitalize">
                     {Config.App.Domain.Name}
                 </span>
@@ -39,8 +39,8 @@ export default class CoreMenu extends React.Component {
             </nav>
 
             <div className="flex flex-wrap items-center">
-                <a className="text-white font-semibold px-8" href={`/login`}>Login</a>
-                <a href="/signup" className="flex transition-all text-sm font-semibold tracking duration-300 hover:shadow-md hover:scale-95 hover:bg-supreme shadow-none flex-wrap items-center
+                <a className="text-white px-8" href={`/login`}>Login</a>
+                <a href="/signup" className="flex transition-all text-sm tracking duration-300 hover:shadow-md hover:scale-95 hover:bg-supreme shadow-none flex-wrap items-center
              text-center justify-center bg-first rounded-md text-white py-3 focus:outline-none px-8 uppercase">
                     <span>
                         Join Now

@@ -1,4 +1,5 @@
 import React from "react";
+import client_chat_filter from "../../utils/client_chat_filter";
 
 const UserRank = {
     0: "USER",
@@ -27,14 +28,14 @@ class MessageBox extends React.Component {
                         <h3 className="text-white text-[14px]">
                             {this.props.username}
                         </h3>
-                        <p className={`${RankColor[this.props.rank]} text-[9px] font-semibold`}>
+                        <p className={`${RankColor[this.props.rank]} text-[9px]`}>
                             {UserRank[this.props.rank]}
                         </p>
                     </div>
                 </div>
 
-                <div className="text-gray-300 break-words mt-2 text-[13px]">
-                    {this.props.content}
+                <div className="text-gray-300 break-words mt-2 text-[13px] lexend-deca">
+                    {client_chat_filter.process(this.props.content)}
                 </div>
             </div>
         );
