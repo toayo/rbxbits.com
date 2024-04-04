@@ -1,11 +1,12 @@
 require("dotenv").config()
 
 const NotFound = require("./routes/not_found")
+const IndexRoute = require("./routes/index")
 const express = require("express")
 const app = express()
 
-
-app.use(NotFound)
+app.use("/", IndexRoute)
+app.use("*", NotFound)
 
 app.listen(parseInt(process.env.PORT), function (err) {
     if (err != null) {

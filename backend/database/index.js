@@ -1,4 +1,4 @@
-import { Sequelize, DataTypes } from 'sequelize';
+const { Sequelize, DataTypes } = require('sequelize');
 
 const {
     DB_USER,
@@ -7,8 +7,19 @@ const {
     DB_HOST,
 } = process.env
 
-export const sequelize = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
+const sequelize = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
     host: DB_HOST,
     dialect: "mysql"
 });
 
+class Database {
+    async getUserByToken(token) {
+        const data = await sequelize.query(`SELECT * FROM users WHERE access_token = ?`, [token])
+        return data
+    }
+}
+
+module.exports = new Database();
+module.exports = {
+    sequelize
+}

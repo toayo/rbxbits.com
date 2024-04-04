@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const route = Router();
 
-route.use("*", function (req, res) {
+route.use("/", function (req, res) {
     const incoming_ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
     return res.json({
         success: false,
