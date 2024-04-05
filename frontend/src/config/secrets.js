@@ -2,8 +2,11 @@
 const Secrets = {
     Offerwalls: {
         Lootably: {
-
-        }
+            Embed: "lootable.com"
+        },
+        Offertoro: {
+            Embed: "lootable.com"
+        },
     },
 
     // Do not add extra fields

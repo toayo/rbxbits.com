@@ -10,6 +10,8 @@ import "./style/font.css"
 import "./style/master.css"
 import TowersGame from "./pages/towers";
 import MinesGame from "./pages/mines";
+import RouletteGame from "./pages/roulette";
+import EarnPage from "./pages/earn";
 
 const messages = [
   {
@@ -79,6 +81,8 @@ function App() {
               <Routes>
                 <Route path="/mines" element={<MinesGame />} />
                 <Route path="/cups" element={<CupsGame />} />
+                <Route path="/roulette" element={<RouletteGame />} />
+                <Route path="/earn" element={<EarnPage />} />
                 {/* Other routes go here */}
               </Routes>
             </section>

@@ -7,7 +7,7 @@ export default class MinesGame extends Component {
 
     render() {
         return (
-            <main className="flex text-bright flex-wrap justify-center overflow-scroll h-full p-8">
+            <main className="flex text-bright flex-wrap justify-center overflow-scroll h-full p-12">
                 <div className="w-full grid grid-cols-12 gap-6">
                     <div className='2xl:col-span-4 col-span-12'>
                         <section className="p-5 ring ring-first bg-boxed rounded-[12px]">
@@ -46,9 +46,9 @@ export default class MinesGame extends Component {
                             </div>
                         </section>
                     </div>
-                    <section className="2xl:col-span-8 col-span-12 space-y-4">
-                        <div className="p-5 ring ring-light bg-boxed rounded-[12px] w-full space-y-2">
-                            <div className="py-6 px-8 rounded-md grid grid-cols-6 gap-10">
+                    <section className="2xl:col-span-8 col-span-12 space-y-4 flex flex-wrap justify-center">
+                        <div className="p-5 ring ring-light bg-boxed rounded-[12px] w-11/12 space-y-2">
+                            <div className="py-6 px-6 rounded-md grid grid-cols-6 gap-6">
                                 {[...Array.from({ length: 36 }, (_, index) => index + 1)].map(i => {
                                     return (
                                         <div className='justify-center flex flex-wrap items-center'>
