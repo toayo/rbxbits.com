@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import RobloxDummy from "../../images/RobloxDummy.png";
-import PinkCup from "../../images/pink_cup.svg";
-import YellowCup from "../../images/yellow_cup.svg";
-import MagentaCup from "../../images/magenta_cup.svg";
-import PurpleCup from "../../images/purple_cup.svg";
 
 export default class TowersGame extends Component {
     componentDidMount() {

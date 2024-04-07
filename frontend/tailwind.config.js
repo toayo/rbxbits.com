@@ -1,7 +1,7 @@
 const config = {
   content: [
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,jsx}",
+    "./src/pages/**/*.{js,jsx}",
   ],
   theme: {
     extend: {
@@ -41,6 +41,9 @@ const config = {
         },
         bright: {
           DEFAULT: "#A0B4BF"
+        },
+        readable: {
+          DEFAULT: "#E3E3E3"
         },
         cups: {
           magenta: "#cb62de",

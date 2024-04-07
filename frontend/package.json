@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "animate.css": "^4.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
@@ -19,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "css": "npx tailwindcss -i ./src/style/globals.css -o ./src/style/tw.css --watch --minify"
+    "css-dev": "npx tailwindcss -i ./src/style/globals.css -o ./src/style/tw.css --watch --minify",
+    "css": "npx tailwindcss -i ./src/style/globals.css -o ./src/style/tw.css --minify"
   },
   "eslintConfig": {
     "extends": [

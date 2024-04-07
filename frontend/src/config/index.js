@@ -19,7 +19,7 @@ const App = {
         return {
             DisplayName: `${this.Name}.gg`
         };
-    }
+    },
 }
 
 const Config = {

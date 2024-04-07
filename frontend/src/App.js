@@ -3,15 +3,19 @@ import CupsGame from "./pages/cups/index"
 import CoreMenu from "./components/Menu/CoreMenu";
 import ChatCore from "./components/Chat/ChatCore";
 import SidebarCore from "./components/Sidebar/SidebarCore";
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import "./style/tw.css"
-import "./style/font.css"
 import "./style/master.css"
+import "./style/font.css"
+
+import "animate.css"
+
+import RouletteGame from "./pages/roulette";
 import TowersGame from "./pages/towers";
 import MinesGame from "./pages/mines";
-import RouletteGame from "./pages/roulette";
 import EarnPage from "./pages/earn";
+import HomePage from "./pages/home";
 
 const messages = [
   {
@@ -79,8 +83,10 @@ function App() {
               }}
             >
               <Routes>
-                <Route path="/mines" element={<MinesGame />} />
+                <Route path="/" element={<HomePage />} />
                 <Route path="/cups" element={<CupsGame />} />
+                <Route path="/tower" element={<TowersGame />} />
+                <Route path="/mines" element={<MinesGame />} />
                 <Route path="/roulette" element={<RouletteGame />} />
                 <Route path="/earn" element={<EarnPage />} />
                 {/* Other routes go here */}

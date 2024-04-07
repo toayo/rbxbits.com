@@ -1,4 +1,4 @@
-const BAD_WORDS = [
+export const BAD_WORDS = [
     "fuck",
     "bitch",
     "dick",
@@ -24,4 +24,5 @@ class ClientChatFilter {
     }
 }
 
-export default new ClientChatFilter();
+const ChatFilter = new ClientChatFilter();
+export default ChatFilter;
