@@ -6,6 +6,14 @@ export default class MinesGame extends Component {
     }
 
     render() {
+        const Matrix = [
+            ...Array.from({ length: 6 }, (_, index) => index + 1)
+        ].map(a => {
+            return Array.from({ length: 6 }, (_, index) => index + 1)
+        });
+
+        console.log(Matrix)
+
         return (
             <main className="flex text-bright flex-wrap justify-center overflow-scroll h-full p-12">
                 <div className="w-full grid grid-cols-12 gap-6">
@@ -46,18 +54,20 @@ export default class MinesGame extends Component {
                             </div>
                         </section>
                     </div>
-                    <section className="2xl:col-span-8 col-span-12 space-y-4 flex flex-wrap justify-center">
-                        <div className="p-5 ring ring-light bg-boxed rounded-[12px] w-11/12 space-y-2">
-                            <div className="py-6 px-6 rounded-md grid grid-cols-6 gap-6">
-                                {[...Array.from({ length: 36 }, (_, index) => index + 1)].map(i => {
-                                    return (
-                                        <div className='justify-center flex flex-wrap items-center'>
-                                            <div className='h-20 w-20 flex flex-wrap justify-center items-center bg-inner rounded-md'>
-                                                ?
-                                            </div>
-                                        </div>
-                                    )
-                                })}
+                    <section className="2xl:col-span-8 col-span-12 space-y-6 justify-center w-full">
+                        <div className="p-4 ring ring-light bg-boxed rounded-[12px] w-11/12 space-y-3">
+                            <div className="py-6 px-6 rounded-md grid grid-cols-6 gap-4">
+                                {Matrix.map(row => (
+                                    <div className='justify-center flex flex-wrap items-center space-y-6'>
+                                        {row.map(element => (
+                                            <button onClick={(e) => {
+                                                // Update Button Color
+                                            }} className='h-20 w-20 flex flex-wrap justify-center items-center bg-inner rounded-md' key={element}>
+                                                <span>?</span>
+                                            </button>
+                                        ))}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </section>
