@@ -21,7 +21,7 @@ class MessageBox extends React.Component {
 
     render() {
         return (
-            <div className="rounded-br-xl rounded-tr-xl rounded-tl-xl bg-light p-4">
+            <div className="w-full rounded-br-xl rounded-tr-xl rounded-tl-xl bg-light p-4">
                 <div className="flex flex-wrap space-x-3">
                     <div className="w-10 h-10 bg-dark rounded-full"></div>
                     <div>

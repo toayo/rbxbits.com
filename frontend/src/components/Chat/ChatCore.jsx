@@ -26,13 +26,22 @@ export default class ChatCore extends Component {
 
     render() {
         return (
-            <div className="h-full w-full overflow-y-auto scroll-smooth space-y-3 border-l border-light p-3">
-                {this.state.messages.map((msg, index) => (
-                    <MessageBox key={index} {...msg} />
-                ))}
-                {/* This div ensures scrolling to the bottom */}
-                <div ref={this.chatBottomRef} />
-                <section>
+            <div className="h-full w-full space-y-3 border-l border-light p-3 overflow-y-hidden scroll-smooth">
+                <section className="hidden-scrollbar flex flex-wrap space-y-2 overflow-y-auto scroll-smooth"
+                    style={{
+                        height: "95%",
+                        width: "100%"
+                    }}>
+                    {this.state.messages.map((msg, index) => (
+                        <MessageBox key={index} {...msg} />
+                    ))}
+                    <div ref={this.chatBottomRef} />
+                </section>
+
+                <section style={{
+                    height: "5%"
+                }}
+                    className="">
                     <input
                         onKeyUp={(e) => {
                             const content = this.state.content

@@ -21,3 +21,18 @@ html {
 ::-webkit-scrollbar-thumb {
     background-color: #333747;
 }
+
+.hidden-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+}
+
+.hidden-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    display: none;
+}
