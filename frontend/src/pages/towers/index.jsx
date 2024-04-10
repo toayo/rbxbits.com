@@ -33,15 +33,32 @@ export default class TowersGame extends Component {
                             <div className="w-full space-y-2 mt-6">
                                 <div>
                                     <label htmlFor="" className="text-xs uppercase tracking-wide">Amount</label>
-                                    <input type="text" className="focus:outline-none bg-inner font-medium px-4 text-xs rounded-md py-3 w-full" placeholder='100.00' />
+                                    <input type="text" className="focus:outline-none bg-inner px-4 text-xs rounded-md py-3 w-full" placeholder='100.00' />
                                 </div>
+
                                 <div>
                                     <label htmlFor="" className="text-xs uppercase tracking-wide">Reward</label>
-                                    <input type="text" className="focus:outline-none bg-inner font-medium px-4 text-xs rounded-md py-3 w-full" placeholder='2x' />
+                                    <input type="text" className="focus:outline-none bg-inner px-4 text-xs rounded-md py-3 w-full" placeholder='2x' />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="" className="text-xs uppercase tracking-wide">Reward</label>
+                                    <div className='flex flex-wrap space-x-3'>
+                                        <div className='text-xs bg-first text-white py-2 px-4 rounded-md'>
+                                            Easy
+                                        </div>
+                                        <div className='text-xs bg-inner py-2 px-4 rounded-md'>
+                                            Normal
+                                        </div>
+                                        <div className='text-xs bg-inner py-2 px-4 rounded-md'>
+                                            Hard
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="mt-7">
+
+                            <div className="mt-4">
                                 <button className="w-full px-4 py-3 rounded-md bg-first uppercase text-white hover:bg-supreme duration-200 transition-all hover:scale-95 hover:border-first border border-transparent">Play</button>
                             </div>
                         </section>
@@ -49,15 +66,6 @@ export default class TowersGame extends Component {
                     <section className="2xl:col-span-8 col-span-12 space-y-4">
                         <div className="p-5 ring ring-light bg-boxed rounded-[12px] w-full space-y-2">
                             <div className="py-6 px-8 rounded-md grid grid-cols-6 gap-10">
-                                {[...Array.from({ length: 36 }, (_, index) => index + 1)].map(i => {
-                                    return (
-                                        <div className='justify-center flex flex-wrap items-center'>
-                                            <div className='h-20 w-20 flex flex-wrap justify-center items-center bg-inner rounded-md'>
-                                                ?
-                                            </div>
-                                        </div>
-                                    )
-                                })}
                             </div>
                         </div>
                     </section>

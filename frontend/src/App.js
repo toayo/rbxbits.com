@@ -85,7 +85,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/cups" element={<CupsGame />} />
-                <Route path="/tower" element={<TowersGame />} />
+                <Route path="/towers" element={<TowersGame />} />
                 <Route path="/mines" element={<MinesGame />} />
                 <Route path="/roulette" element={<RouletteGame />} />
                 <Route path="/earn" element={<EarnPage />} />

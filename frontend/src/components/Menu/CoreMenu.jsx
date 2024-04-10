@@ -2,6 +2,7 @@ import Config from "../../config"
 import React from "react"
 import TermsOfUse from "../Modals/TermsOfUse"
 import Register from "../Modals/Register"
+import Login from "../Modals/Login"
 
 export default class CoreMenu extends React.Component {
     state = {
@@ -61,7 +62,20 @@ export default class CoreMenu extends React.Component {
             </nav>
 
             <div className="flex flex-wrap items-center">
-                <a className="text-white px-8" href={`/login`}>Login</a>
+                <button
+                    onClick={() => {
+                        this.setState({
+                            showingModal: (
+                                <Login onClose={() => {
+                                    this.setState({
+                                        showingModal: null
+                                    })
+                                }} ></Login>
+                            )
+                        })
+                    }}
+                    className="text-white px-8" href={`/login`}>Login</button>
+
                 <button
                     onClick={() => {
                         this.setState({
