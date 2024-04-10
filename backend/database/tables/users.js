@@ -16,5 +16,7 @@ module.exports = {
 
     access_token: {
         type: DataTypes.TEXT,
-    }
+    },
+
+
 }

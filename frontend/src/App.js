@@ -16,6 +16,7 @@ import TowersGame from "./pages/towers";
 import MinesGame from "./pages/mines";
 import EarnPage from "./pages/earn";
 import HomePage from "./pages/home";
+import CrashGame from "./pages/crash";
 
 const messages = [
   {
@@ -84,6 +85,7 @@ function App() {
             >
               <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/crash" element={<CrashGame />} />
                 <Route path="/cups" element={<CupsGame />} />
                 <Route path="/towers" element={<TowersGame />} />
                 <Route path="/mines" element={<MinesGame />} />
