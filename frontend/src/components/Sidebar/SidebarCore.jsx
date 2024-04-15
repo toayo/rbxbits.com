@@ -38,7 +38,6 @@ export default function SidebarCore() {
         }
     }
 
-
     const Mores = {
         Promocode: {
             Location: "/promocode",
